@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Train Fare</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #563D7C" ;>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <a class="navbar-brand" href="./Home.html">INDIAN RAILWAYS</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./Home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- content -->
+    <div class="container">
+        <h1 class="my-4 text-center">Check Train Fare</h1>
+        <!-- form to get details -->
+        <form id="form" class="bg-light p-5">
+            <div class="form-group">
+                <label for="train_no">Train Number : </label>
+                <div class="inputBlock">
+                    <input type="number" style="box-shadow: none;" class="form-control" id="train_no" name="train_no" placeholder="Enter Train Number" required>
+                    <span class="bottom"></span>
+                    <span class="right"></span>
+                    <span class="top"></span>
+                    <span class="left"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="from">From : </label>
+                <div class="inputBlock">
+                    <input type="text" style="box-shadow: none;" class="form-control" id="from" name="from" placeholder="Enter Start Station" required>
+                    <span class="bottom"></span>
+                    <span class="right"></span>
+                    <span class="top"></span>
+                    <span class="left"></span>
+                </div>
+                <small class="form-text text-muted">Please Enter only station code</small>
+            </div>
+            <div class="form-group">
+                <label for="to">To : </label>
+                <div class="inputBlock">
+                    <input type="text" style="box-shadow: none;" class="form-control" id="to" name="to" placeholder="Enter End Station" required>
+                    <span class="bottom"></span>
+                    <span class="right"></span>
+                    <span class="top"></span>
+                    <span class="left"></span>
+                </div>
+                <small class="form-text text-muted">Please Enter only station code</small>
+            </div>
+            <div class="form-group">
+                <label for="quota">Quota : </label>
+                <select class="form-control" id="quota">
+				<option value="1">GN</option>
+				<option value="2">CK</option>
+			</select>
+            </div>
+            <button type="submit" id="find" class="btn btn-primary">Find</button>
+            <a href="./Home.html" class="btn btn-primary">Back</a>
+            <!-- Loader -->
+            <div id="loading" style="display: none" ;>
+                <h5 class="loading text-center text-danger">Loading...</h5>
+                <div class="dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </form>
+        <hr class="style-one" />
+        <!-- api response -->
+        <div id="response" class="p-3"></div>
+    </div>
+
+    <script src="js/Fare.js"></script>
+</body>
+
+</html>
